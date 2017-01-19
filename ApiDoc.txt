@@ -1,0 +1,72 @@
+#Starting mongod
+run mongod.exe 
+
+#Starting the server:
+node server.js
+
+#Sample Request Body
+// Add customer ,referral
+{
+
+Header : Application/json
+	{
+	  "customer_id": 10,
+	  "email": "customer10@gmail.com",
+	  "referral_id": 1,
+	  "payback": 0,
+	  "isAmbassador": false,
+	  "joiningDate": "2012-04-23T18:25:43.511Z",
+	  "lastUpdated": "2012-04-23T18:25:43.511Z"
+	}
+	
+*To add an ambassador set the 'isAmbassador' field :true
+	
+#Sample Response Body
+  {
+    "_id": "587306eb739bec21a076b66c",
+    "customer_id": 10,
+    "email": "customer3@gmail.com",
+    "referral_id": 1,
+    "payback": 20,
+    "isAmbassador": true,
+    "joiningDate": "2012-04-23T18:25:43.511Z",
+    "lastUpdated": "2012-04-23T18:25:43.511Z"
+  }
+
+ URLs :
+ 1)Adding A new Customer
+ HTTP Method : POST
+ http://localhost:3000/api/customermodels
+ 
+ 2)Fetching a customer details by ID
+HTTP Method : GET http://localhost:3000/api/customermodels/getCustomerById/:id
+
+ 3)Adding A Referral Under A Customer
+ HTTP Method : POST
+ http://localhost:3000/api/customermodels/addReferral
+ 
+ 4)Fetch All Children Under A Customer
+ HTTP Method : GET
+ http://localhost:3000/api/customermodels/fetchAllChildren/:id
+ 
+ 5)Adding A new ambassador
+ HTTP Method : POST
+  http://localhost:3000/api/customermodels
+  
+ 6)Fetch All Customers With Referral Count
+ HTTP Method : GET 
+ http://localhost:3000/api/customermodels/fetchReferralCount
+ 
+ 7)Convert Customer To Ambassador
+ HTTP Method : PUT
+http://localhost:3000/api/customermodels/convertCustomerToAmbassador/:id
+
+8)Fetch All Children of an Ambassador
+HTTP Method : GET
+http://localhost:3000/api/customermodels/fetchAmbassadorChildren/:id
+
+9)Fetch all ambassador children at nth level
+HTTP Method :GET
+http://localhost:3000/api/customermodels/fetchChildrenAtNthLevel/:id1/:id2
+
+

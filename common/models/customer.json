@@ -1,0 +1,31 @@
+{
+  "name": "CustomerModel",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "customer_id": {
+      "type": "Number"
+    },
+    "email": {
+      "type": "String"
+    },
+    "referral_id": {
+      "type": "Number"
+    },
+	"payback":{
+	  "type":"Number"
+	},
+	"isAmbassador":{
+	 "type":"Boolean"
+	},
+	"joiningDate":{
+	 "type":"date"
+	},
+	"lastUpdated":{
+	 "type":"date"
+	}
+  }
+}
